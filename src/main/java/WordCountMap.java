@@ -1,4 +1,3 @@
-
 import java.util.HashMap;
 import java.util.Map;
 public class WordCountMap {
@@ -16,6 +15,14 @@ public class WordCountMap {
      */
     public Map<String, Integer> returnWordMap(String words){
 
-        return null;
+        if (words == null || words.isEmpty()) {
+            return null; 
+        }
+        Map<String, Integer> wordMap = new HashMap<>(); 
+        String[] wordArray = words.split(" ");
+        for (String word : wordArray) {
+            wordMap.put(word, wordMap.getOrDefault(word, 0) + 1);
+        }
+        return wordMap; 
     }
 }
